@@ -1,4 +1,4 @@
-  ////////////PROBLEM 1////////////
+   ////////////PROBLEM 1////////////
   
   /*
     Write a function called myFunc. 
@@ -8,13 +8,22 @@
     myFunc should return getSecretString
   */
   
-  //CODE HERE
+  //ANSWER
+
+  function myFunc(){
+    let myStr = 'super secret string';
+    function getSecretString(){
+      return (myStr)
+    }
+    return getSecretString;
+  }
 
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
-  //CODE HERE
-  
+  //ANSWER
+
+  const secretString = myFunc()
   
   ////////////PROBLEM 2////////////
 
@@ -28,27 +37,44 @@
     The lightSwitch function should return flipTheSwitch.
   */
   
-  //CODE HERE
+  //QUESTION: HOW TO INVERT isTheLightOn BOOLEAN?
 
+  //ANSWER
+
+  function lightSwitch(){
+    let isTheLightOn = false;
+    
+    function flipTheSwitch(){
+      if (isTheLightOn === true) {
+        return 'The light is on'
+      } else {
+        return 'The light is off'
+      }
+    }
+    return flipTheSwitch;
+  }
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
-  //CODE HERE
+  //ANSWER
 
+  let kitchenSwitch = lightSwitch();
   
   //Invoke kitchenSwitch.
 
-  //CODE HERE
+  //ANSWER
   
+  kitchenSwitch();
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
-  //CODE HERE
-  
+  //ANSWER
+
+  let bathroomSwitch = lightSwitch();
   
   //Invoke bathroomSwitch twice.
   
-  //CODE HERE
+  //ANSWER
 
   
   
@@ -58,13 +84,35 @@
     Use the module pattern to create a plant height tracker, name your function 'plantTracker'
     Set up two variables inside plantTracker, 'plant' which should be set to 'fern' and 'height' which should be set to 12
     Return 3 functions using the module pattern
-      - 'readInfo' should return a string of 'This is a PLANT plant that is HEIGHT inches tall.', where PLANT is the value of the plant variable and HEIGHT is the value of the height variable.
+        - 'readInfo' should return a string of 'This is a PLANT plant that is HEIGHT inches tall.', where PLANT is the value of the plant variable and HEIGHT is the value of the height variable.
       - 'waterPlant' should add 1 to the height and return the new height
       - 'prunePlant' should subtract 1 from the height and return the new height
   */
 
-  //CODE HERE
+  //ANSWER
 
+  function plantTracker(){
+    let plant = 'fern';
+    let height = 12;
+
+    function readInfo(){
+      return 'This is a ' + plant + 'plant that is ' + height + 'inches tall.'
+    }
+
+    function waterPlant(){
+      return (height += 1)
+    }
+
+    function prunePlant(){
+      return (height -= 1)
+    }
+
+    return {
+          readInfo,
+          waterPlant,
+          prunePlant
+          }
+  }
 
   ////////////PROBLEM 4////////////
 
@@ -78,19 +126,44 @@
         - hint: try to find the index of the string first
   */
 
-  //CODE HERE
+  //ANSWER
 
+  function inventory() {
+    const products = [];
+
+    function readProducts(){
+      return products;
+    }
+
+    function addToProducts(){
+      products.push('')
+      return products
+    }
+
+    function deleteFromProducts(){
+      delete products[i];
+      return products
+    }
+
+    return{
+      readProducts,
+      addToProducts,
+      deleteFromProducts,
+    }
+  }
 
   /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
   */
 
-  //CODE HERE
+  //ANSWER
 
+    var shoes = inventory();
 
   /*
     Add an item to your shoes array using the addToProducts function
   */
 
-  //CODE HERE
+  //ANSWER
 
+    shoes.addToProduct('Adidas')
