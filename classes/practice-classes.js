@@ -9,12 +9,22 @@
     - getInfo
       - This returns a string of 'This is a TYPE character named NAME.'
       - Example: 'This is a robot character named Clank.'
-
   Call your class Character and receive the data in the constructor in the order listed above. 
   Be sure to match the capitalization and punctuation of the string.
 */
 
-//CODE HERE
+//ANSWER
+
+class Character {
+  constructor(name, type){
+    this.name = name
+    this.type = type
+  }
+
+  getInfo() {
+    return (`This is a ${this.type} character named ${this.name}.`)
+  }
+}
 
 //////////////////PROBLEM 2////////////////////
 
@@ -32,14 +42,28 @@
   Call your new class NPC
 */
 
-//CODE HERE
+//ANSWER
+
+class NPC extends Character {
+    super(name, type){
+    this.location = location;
+    this.phrase = phrase
+  }   
+
+  dialogue(){
+    return (`${this.name}: ${this.phrase}`)
+  }
+}
+
 
 /*
     Create an NPC named Ralph who is a human located in Niceland. His phrase should be `I'm gonna wreck it!`. 
     Store your new NPC in a variable called 'ralph'.
 */
 
-//CODE HERE
+//ANSWER
+
+const ralph = new NPC('Ralph', 'human', 'Niceland', `I'm gonna wreck it!`)
 
 /*
     Next you're going to create three variables to store information about Ralph.
@@ -48,7 +72,11 @@
     Third, make a variable named ralphsLocation whose value will be Ralph's location.
 */
 
-//CODE HERE
+//ANSWER
+
+const ralphsInfo = ralph.getInfo;
+const ralphsDialogue = ralph.dialogue;
+const ralphsLocation = ralph.location;
 
 //////////////////PROBLEM 3////////////////////
 
@@ -73,7 +101,25 @@
   Call your new class Player
 */
 
-//CODE HERE
+// QUESTION: HOW DO i CREATE THE attackStrength PROPERTY?
+
+//ANSWER
+
+class Player extends Character {
+  super(name, type, location, phrase){
+    this.healthLevel = healthLevel;
+    this.attackLevel = attackLevel;
+    this.remainingHealth = healthLevel - attackLevel;
+  }
+    defend(attackLevel){
+      var healthLevel = 100
+    if (i=0, character.healthLevel >= 0, i++){
+      return (remainingHealth, '${name} is still in the fight!')
+    } else { 
+      return '${name} has been defeated!'
+    }
+  }
+}
 
 /*
     Next, we'll create two Players.
@@ -83,7 +129,10 @@
     and he's a firebender type with a 100 healthLevel and 0 attackLevel.
 */
 
-//CODE HERE
+//ANSWER
+
+const aang = new Character('Aang', 'airbender', 'Air Nation', 'When we hit our lowest point, we are open to the greatest change.', 100, 100)
+const ozai = new Character('Ozai', 'firebender', 'Fire Nation', 'She was born lucky. You were lucky to be born.', 100, 100)
 
 /*
     Let's see how a fight between these two would go. 
@@ -92,7 +141,9 @@
     (You can console log battle to see what happens)
 */
 
-//CODE HERE
+//ANSWER
+
+let battle = ozai.defend(aang.attackLevel)
 
 //////////////////PROBLEM 4////////////////////
 
@@ -110,7 +161,25 @@
       - Example string: `Wonder Woman used flight!`
 */
 
-//CODE HERE
+//QUESTION: HOW TO CREATE THE useSuperPower METHOD?
+
+//ANSWER
+
+class Hero extends Player{
+  super(name, type, location, phrase, healthLevel, attackLevel){
+    this.superPowers = [];
+  }
+
+  addSuperPower(){
+    return (this.superPowers.push(''));
+  }
+
+  useSuperPower(){
+    return (superPowers[i]);
+  }
+
+
+}
 
 /*
   Create a hero named 'Fire Spitter' whose type is 'dragon'. 
@@ -121,4 +190,8 @@
   Last, invoke useSuperPower passing in 0 for the index and store the result in a variable called fireSpitterAttack.
 */
 
-//CODE HERE
+//ANSWER
+
+const fireSpitter = new Hero('Fire Spitter', 'dragon', 'Dragonland', 'Rawr!', 5000, 5000);
+
+addSuperPower.push('spitting fire', 'claws of furry', 'siren roar')
