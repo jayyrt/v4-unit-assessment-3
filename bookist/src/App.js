@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header.js';
 import BookList from './components/BookList.js';
 import Shelf from './components/Shelf.js';
-import Data from './components/Data.js';
+import Data from './Data.js';
 
 class App extends Component {
   constructor(){
